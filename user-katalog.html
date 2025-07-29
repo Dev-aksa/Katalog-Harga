@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Barang (User)</title>
+  <link rel="stylesheet" href="user-katalog.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Katalog Barang</h2>
+
+    <input type="text" id="search" placeholder="Cari nama barang..." />
+    <select id="filterKategori">
+      <option value="">Semua Kategori</option>
+    </select>
+
+    <table id="tabelBarang">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Harga (Rp)</th>
+          <th>Kategori</th>
+          <th>Merek</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <button onclick="kembali()">🔙 Kembali</button>
+  </div>
+
+  <script src="user-katalog.js"></script>
+</body>
+</html>

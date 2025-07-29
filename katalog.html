@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Barang</title>
+  <link rel="stylesheet" href="katalog.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Katalog Barang</h2>
+
+    <!-- 🔍 Filter dan Pencarian -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Cari nama / kategori / merek..." oninput="filterProduk()" />
+      <select id="kategoriFilter" onchange="filterProduk()">
+        <option value="">Semua Kategori</option>
+      </select>
+    </div>
+
+    <!-- 📋 Tabel -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Harga</th>
+            <th>Kategori</th>
+            <th>Merek</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="produkTabel"></tbody>
+      </table>
+    </div>
+
+    <!-- 🔧 Form Edit (opsional) -->
+    <div id="editForm" style="display:none; margin-top:20px;">
+      <h3>Edit Barang</h3>
+      <input type="hidden" id="editId" />
+      <input type="text" id="editNama" placeholder="Nama Barang" />
+      <input type="number" id="editHarga" placeholder="Harga (Rp)" />
+      <input type="text" id="editKategori" placeholder="Kategori" />
+      <input type="text" id="editMerek" placeholder="Merek" />
+      <button onclick="simpanEdit()">💾 Simpan</button>
+      <button onclick="batalEdit()">❌ Batal</button>
+    </div>
+
+    <button class="back-btn" onclick="location.href='dashboard.html'">⬅️ Kembali</button>
+  </div>
+
+  <script src="katalog.js"></script>
+</body>
+</html>
