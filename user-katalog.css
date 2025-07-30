@@ -6,8 +6,7 @@ body {
 
 .container {
   max-width: 90%;
-  margin: auto;
-  margin-top: 40px;
+  margin: 40px auto;
   padding: 20px;
   background: white;
   border-radius: 10px;
@@ -16,31 +15,42 @@ body {
 
 h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 input, select {
   padding: 10px;
   margin-bottom: 15px;
   width: 100%;
-  box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.table-wrapper {
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  min-width: 500px;
+  background-color: white;
 }
 
 th, td {
   padding: 10px;
   border: 1px solid #ccc;
   text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #eaeaea;
 }
 
 button {
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 10px;
   background-color: #3b82f6;
   color: white;
@@ -51,23 +61,20 @@ button {
 }
 
 @media (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
+  body {
+    font-size: 14px;
   }
 
-  tr {
-    margin-bottom: 15px;
+  h2 {
+    font-size: 18px;
   }
 
-  td {
-    padding-left: 50%;
-    position: relative;
+  input, select, button {
+    font-size: 14px;
+    padding: 8px;
   }
 
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
+  .container {
+    padding: 15px;
   }
 }
