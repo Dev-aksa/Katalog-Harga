@@ -24,7 +24,9 @@
         <thead>
           <tr>
             <th>Nama</th>
-            <th>Harga</th>
+            <th>Level 1</th>
+            <th>Level 2</th>
+            <th>Level 3</th>
             <th>Kategori</th>
             <th>Merek</th>
             <th>Aksi</th>
@@ -34,12 +36,14 @@
       </table>
     </div>
 
-    <!-- 🔧 Form Edit (opsional) -->
+    <!-- 🔧 Form Edit -->
     <div id="editForm" style="display:none; margin-top:20px;">
       <h3>Edit Barang</h3>
       <input type="hidden" id="editId" />
       <input type="text" id="editNama" placeholder="Nama Barang" />
-      <input type="number" id="editHarga" placeholder="Harga (Rp)" />
+      <input type="number" id="editLevel1" placeholder="Harga Level 1 (Rp)" />
+      <input type="number" id="editLevel2" placeholder="Harga Level 2 (Rp)" />
+      <input type="number" id="editLevel3" placeholder="Harga Level 3 (Rp)" />
       <input type="text" id="editKategori" placeholder="Kategori" />
       <input type="text" id="editMerek" placeholder="Merek" />
       <button onclick="simpanEdit()">💾 Simpan</button>
