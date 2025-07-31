@@ -9,13 +9,28 @@
 <body>
   <div class="container">
     <h2>Tambah Barang</h2>
+
+    <!-- Nama -->
     <input type="text" id="nama" placeholder="Nama Barang" />
-    <input type="number" id="harga" placeholder="Harga (Rp)" />
-    <input type="text" id="kategori" placeholder="Kategori" />
-    <input type="text" id="merek" placeholder="Merek" />
+
+    <!-- Level Harga -->
+    <input type="number" id="hargaLevel1" placeholder="Harga Level 1 (Rp)" />
+    <input type="number" id="hargaLevel2" placeholder="Harga Level 2 (Rp)" />
+    <input type="number" id="hargaLevel3" placeholder="Harga Level 3 (Rp)" />
+
+    <!-- Kategori dengan datalist -->
+    <input list="listKategori" id="kategori" placeholder="Kategori" />
+    <datalist id="listKategori"></datalist>
+
+    <!-- Merek dengan datalist -->
+    <input list="listMerek" id="merek" placeholder="Merek" />
+    <datalist id="listMerek"></datalist>
+
+    <!-- Tombol -->
     <button onclick="tambahBarang()">Tambah</button>
     <button onclick="location.href='dashboard.html'">⬅️ Kembali</button>
   </div>
+
   <script src="tambah.js"></script>
 </body>
 </html>
