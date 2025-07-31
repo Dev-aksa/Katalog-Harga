@@ -7,9 +7,12 @@ function tampilkanProduk(data) {
 
   data.forEach(item => {
     const row = document.createElement("tr");
+
     row.innerHTML = `
       <td>${item.nama}</td>
-      <td>Rp ${item.harga}</td>
+      <td>Rp ${parseInt(item.hargaLevel1 || 0).toLocaleString()}</td>
+      <td>Rp ${parseInt(item.hargaLevel2 || 0).toLocaleString()}</td>
+      <td>Rp ${parseInt(item.hargaLevel3 || 0).toLocaleString()}</td>
       <td>${item.kategori}</td>
       <td>${item.merek}</td>
       <td>
@@ -52,7 +55,9 @@ function tampilkanFormEdit(id) {
     .then(data => {
       document.getElementById("editId").value = data.id;
       document.getElementById("editNama").value = data.nama;
-      document.getElementById("editHarga").value = data.harga;
+      document.getElementById("editLevel1").value = data.hargaLevel1 || 0;
+      document.getElementById("editLevel2").value = data.hargaLevel2 || 0;
+      document.getElementById("editLevel3").value = data.hargaLevel3 || 0;
       document.getElementById("editKategori").value = data.kategori;
       document.getElementById("editMerek").value = data.merek;
       document.getElementById("editForm").style.display = "block";
@@ -64,7 +69,9 @@ function simpanEdit() {
   const id = document.getElementById("editId").value;
   const data = {
     nama: document.getElementById("editNama").value,
-    harga: document.getElementById("editHarga").value,
+    hargaLevel1: parseInt(document.getElementById("editLevel1").value),
+    hargaLevel2: parseInt(document.getElementById("editLevel2").value),
+    hargaLevel3: parseInt(document.getElementById("editLevel3").value),
     kategori: document.getElementById("editKategori").value,
     merek: document.getElementById("editMerek").value,
   };
