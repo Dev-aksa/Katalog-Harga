@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Katalog Barang (User)</title>
   <link rel="stylesheet" href="user-katalog.css" />
 </head>
@@ -10,26 +10,32 @@
   <div class="container">
     <h2>Katalog Barang</h2>
 
-    <input type="text" id="search" placeholder="Cari nama barang..." />
-    <select id="filterKategori">
-      <option value="">Semua Kategori</option>
-    </select>
+    <!-- 🔍 Filter -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Cari nama / kategori / merek..." oninput="filterProduk()" />
+      <select id="kategoriFilter" onchange="filterProduk()">
+        <option value="">Semua Kategori</option>
+      </select>
+    </div>
 
-      <div class="table-wrapper">
-    <table id="tabelBarang">
-      <thead>
-        <tr>
-          <th>Nama</th>
-          <th>Harga (Rp)</th>
-          <th>Kategori</th>
-          <th>Merek</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-      </div>
+    <!-- 📋 Tabel -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Level 1</th>
+            <th>Level 2</th>
+            <th>Level 3</th>
+            <th>Kategori</th>
+            <th>Merek</th>
+          </tr>
+        </thead>
+        <tbody id="produkTabel"></tbody>
+      </table>
+    </div>
 
-    <button onclick="kembali()">🔙 Kembali</button>
+    <button class="back-btn" onclick="location.href='user-dashboard.html'">⬅️ Kembali</button>
   </div>
 
   <script src="user-katalog.js"></script>
