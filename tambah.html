@@ -10,27 +10,30 @@
   <div class="container">
     <h2>Tambah Barang</h2>
 
-    <!-- Nama -->
+    <!-- Input Manual -->
     <input type="text" id="nama" placeholder="Nama Barang" />
-
-    <!-- Level Harga -->
     <input type="number" id="hargaLevel1" placeholder="Harga Level 1 (Rp)" />
     <input type="number" id="hargaLevel2" placeholder="Harga Level 2 (Rp)" />
     <input type="number" id="hargaLevel3" placeholder="Harga Level 3 (Rp)" />
-
-    <!-- Kategori dengan datalist -->
     <input list="listKategori" id="kategori" placeholder="Kategori" />
     <datalist id="listKategori"></datalist>
-
-    <!-- Merek dengan datalist -->
     <input list="listMerek" id="merek" placeholder="Merek" />
     <datalist id="listMerek"></datalist>
 
     <!-- Tombol -->
     <button onclick="tambahBarang()">Tambah</button>
     <button onclick="location.href='dashboard.html'">⬅️ Kembali</button>
+
+    <hr />
+
+    <!-- Fitur Import Excel -->
+    <h3>Import dari Excel</h3>
+    <input type="file" id="excelFile" accept=".xlsx" />
+    <button onclick="importDariExcel()">Import Excel</button>
   </div>
 
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script src="tambah.js"></script>
 </body>
 </html>
