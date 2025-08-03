@@ -9,6 +9,7 @@ function tampilkanProduk(data) {
     const row = document.createElement("tr");
 
     row.innerHTML = `
+      <td>${item.kode || "-"}</td> <!-- Kolom Kode -->
       <td>${item.nama}</td>
       <td>Rp ${parseInt(item.hargaLevel1 || 0).toLocaleString()}</td>
       <td>Rp ${parseInt(item.hargaLevel2 || 0).toLocaleString()}</td>
@@ -30,8 +31,8 @@ function filterProduk() {
 
   const hasil = semuaProduk.filter(p =>
     (p.nama.toLowerCase().includes(keyword) ||
-     p.merek.toLowerCase().includes(keyword) ||
-     p.kategori.toLowerCase().includes(keyword)) &&
+      p.merek.toLowerCase().includes(keyword) ||
+      p.kategori.toLowerCase().includes(keyword)) &&
     (kategori === "" || p.kategori === kategori)
   );
 
