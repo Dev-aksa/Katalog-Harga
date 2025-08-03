@@ -1,18 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  height: 100%;
+  width: 100%;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f4f4;
 }
 
 .container {
   background-color: #fff;
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 20px 10px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+h2 {
   text-align: center;
+  color: #333;
+  margin-bottom: 30px;
 }
 
 /* Filter & Pencarian */
@@ -23,7 +36,7 @@ body {
   margin-bottom: 20px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .filter-bar {
     flex-direction: row;
     justify-content: space-between;
@@ -31,27 +44,34 @@ body {
   }
 }
 
-.filter-bar input, .filter-bar select {
-  padding: 8px;
-  font-size: 14px;
+.filter-bar input,
+.filter-bar select {
+  padding: 10px 14px;
+  font-size: 15px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  width: 100%;
+  max-width: 300px;
 }
 
-/* Responsif Tabel */
+/* Table wrapper */
 .table-wrapper {
   overflow-x: auto;
+  margin-top: 20px;
 }
 
 table {
-  min-width: 600px;
   width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
+  font-size: 15px;
+  background-color: white;
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 12px;
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
   text-align: center;
 }
 
@@ -59,14 +79,19 @@ th {
   background-color: #f8f8f8;
 }
 
+tr:hover {
+  background-color: #f9f9f9;
+}
+
 /* Tombol */
 button {
-  padding: 6px 12px;
+  padding: 8px 14px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
   margin: 4px;
+  transition: 0.2s ease-in-out;
 }
 
 .edit-btn {
@@ -74,13 +99,34 @@ button {
   color: white;
 }
 
+.edit-btn:hover {
+  background-color: #e67e22;
+}
+
 .delete-btn {
   background-color: #e74c3c;
   color: white;
 }
 
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
 .back-btn {
   background-color: #3498db;
   color: white;
-  margin-top: 20px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.back-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Tombol responsif di HP */
+@media (max-width: 480px) {
+  button {
+    width: 100%;
+    margin: 6px 0;
+  }
 }
